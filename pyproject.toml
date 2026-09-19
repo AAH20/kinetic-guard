@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kinetic-guard"
+version = "1.0.0"
+description = "Deterministic Control Barrier Function (CBF) Safety Kernel & Reflex Middleware for Physical AI & Humanoid Robotics"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Ahmed Hassan", email = "ahmed@a2zsoc.com" }
+]
+keywords = [
+    "physical-ai",
+    "robotics",
+    "control-barrier-functions",
+    "cbf",
+    "vla-safety",
+    "humanoids",
+    "ros2",
+    "safety-kernel",
+    "neuromorphic-robotics",
+    "eu-ai-act-annex-iii"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Human Machine Interfaces"
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+fast-qp = [
+    "numpy>=1.24.0",
+    "scipy>=1.10.0"
+]
+ros2 = [
+    "pyyaml>=6.0"
+]
+all = [
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "pyyaml>=6.0"
+]
+
+[project.scripts]
+kinetic-guard = "kineticguard.cli:main"
+kineticguard = "kineticguard.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
